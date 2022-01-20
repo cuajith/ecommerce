@@ -1,0 +1,57 @@
+
+.slider-2{
+  color: #fff;
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 350px;
+  padding: 12px 10px;
+  background-color: rgba( 255, 255, 255, 0.1 );
+}
+.top-trending{
+  font-size: 30px;
+    line-height: 1.38;
+    font-weight: 400;
+    display: block;
+    margin-left: 0px;
+    margin-top: 80px;
+}
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  
+  padding: 0;
+}
+.display-image{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0px 10px;
+  
+}
+.display-image img{
+  width: 100%;
+  height: 250px;
+  
+}
+.display-image p{
+  text-align: center;
+}
+.product-span{
+  display: flex;
+  flex-direction: row;
+}
+.product-span .span-header{
+ margin: 5px 0;
+  color: #ecf0f1;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 16px;
+}
+.span-rupee{
+  margin-top: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    color: skyblue;
+    margin-left: 135px;
+}

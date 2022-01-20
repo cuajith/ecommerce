@@ -1,0 +1,118 @@
+
+* {
+  font-family: sans-serif;
+  padding: 0 ;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+.App {
+    padding: 20px 57px;
+  }
+.user-input {
+    
+  width: 600px;
+  padding: 5px 20px;
+  background: rgba( 255, 255, 255, 0.1 );
+  border: solid 2px rgba(255,255,255,.3);
+  background-clip: padding-box;
+  -webkit-backdrop-filter: blur( 4px );
+  backdrop-filter: blur( 4px );
+  color: white;
+  border-radius: 25px;
+  margin-top: 19px;
+  margin-left: 60px;
+}
+.suggestions-list {
+    display: block; 
+    position: absolute;
+    background: rgba( 255, 255, 255, 0.1 );
+    border: solid 2px rgba(255,255,255,.3);
+    
+    -webkit-backdrop-filter: blur( 4px );
+    backdrop-filter: blur( 4px );
+   
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    
+    z-index: 1;
+    list-style: none;
+  padding: 0;
+  max-height: 160px;
+  overflow-y: auto;
+  width: 582px;
+    left: 307px
+ 
+    /*display: block; 
+    position: absolute;
+    background: rgba( 255, 255, 255, 0.1 );
+    border: solid 2px rgba(255,255,255,.3);
+    
+    -webkit-backdrop-filter: blur( 4px );
+    backdrop-filter: blur( 4px );
+   
+    box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+    
+    z-index: 1;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.596);
+    width: 27%;
+    top: 75px;
+    left: 10.5%;*/
+}
+
+
+.suggestion {
+    background-color: rgb(226, 181, 181);
+  padding: 10px;
+  color: rgb(65, 65, 65);
+  cursor: pointer;
+  
+    /*position:relative;
+    color:#ecf0f1;
+    border-radius: 4px;
+    background: rgba( 255, 255, 255, 0.1 );
+    border: solid 2px rgba(255,255,255,.3);
+    background-clip: padding-box;
+    backdrop-filter: blur( 4px );
+     display: flex;
+     margin: 0px;    
+     justify-content: center;
+     flex-direction: row;
+     max-width: 1600px;
+     height: 100%;
+     cursor: pointer;
+     
+    
+    left: 10.5%;*/
+}
+.suggestion:hover {
+  background-color: rgba(238, 238, 238, 0.1);
+}
+.selected {
+  background-color: rgba( 255, 255, 255, 0.1 );
+  color: rgb(238, 223, 223);
+}
+.image-cover{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 20px;
+  object-fit: cover;
+  object-position: center right;
+}
+@media (max-width:767px){
+    .user-input{
+        max-width: 250px;
+        border: none;
+        padding: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        border: solid 2px rgba(255,255,255,.3);
+        color: white;
+    }
+    .suggestions-list{
+        width: 250px;
+    }
+}
