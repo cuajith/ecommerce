@@ -4,24 +4,28 @@
     display: block;
     margin: 0 0;
     position:relative;
-    color:#ecf0f1;
+    color:#ffffff;
+    padding-left: 86px;
   }
   .fa-user{
     font-size: 28px;
-    margin-left: -14px;
-    margin-top: 12px;
+    margin-left: -190px;
+    margin-top: 5px;
     color: rgb(236, 240, 241);
     background-clip: padding-box;
 }
 .login-span{
-  margin-left: 72px;
-  color: #ecf0f1;
+  margin-left: -18px;
+  color: #ffffff;
+}
+.login-span:hover{
+  text-decoration: none;
 }
 .login-dropdown{
   font-size: 14px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   border-bottom: none;
-  margin-left: 90px;
+  margin-left: 176px;
   color: white;
   width: 85px;
 }
@@ -33,7 +37,7 @@
   list-style-type: none;
   display: none;
   position: absolute;
-  background: #f8f9fa;
+  background: #ffffff;
   border: solid 2px rgba(255,255,255,.3);
   background-clip: padding-box;
   backdrop-filter: blur( 4px );
@@ -41,24 +45,33 @@
   z-index: 100;
   text-decoration: none;
   border-bottom: 1px solid #fff;
-  margin-left: 0;
+  margin-left: 0px;
   margin-right: 0;
 }
-
-.login-dropdown:hover  .loginlist-dropdown {
-  display: flex;
-  flex-direction: column;
-  width: 180px;
-  height: 150px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-align: left;
-  padding-left: 0px;
-  padding-right: 0px;
-  font-size: 14px;
-  margin-left:35px;
-  top: 80px;
-  left: 0px;
+.loginlist-dropdown:before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+  position: absolute;
+  margin: -20px 0px 0px 60px;
 }
+.login-dropdown:hover  .loginlist-dropdown {
+   display: flex;
+    flex-direction: column;
+    width: 180px;
+    height: 150px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: left;
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 14px;
+    margin-left: 4px;
+    top: 70px;
+    left: 0px;
+  }
 .loginlist-dropdown-items {
   color: #000000;
   text-decoration: none;
@@ -67,7 +80,7 @@
   object-fit: cover;
 }
 .loginlist-dropdown-items a:hover{
-  background-color: rgba(255, 255, 255, 0.342);
+ 
   color:rgba(255, 255, 255, 0.623); ;
 }
 .loginlist-dropdown-items button{
@@ -76,8 +89,7 @@
   font-size: 18px;
   display: flex;
   border: none;
-  background-color: rgba(1, 1, 36, 0.589);
-  border-radius: 20px;
+  background-color: rgb(7, 83, 247);
 }
 .loginlist-dropdown-items button a{
   align-self: center;
@@ -86,3 +98,50 @@
   font-size: 15px;
   margin-left: 50px;
 }
+@media(max-width:767px){
+  .login-dropdown{
+    font-size: 14px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: none;
+    margin-left: 424px;
+    color: white;
+    width: 85px;
+  }
+  .fa-user{
+    font-size: 22px;
+    margin-left: -190px;
+    margin-top: 62px;
+    color: rgb(236, 240, 241);
+    background-clip: padding-box;
+}
+.login-span{
+  margin-left: 229px;
+  color: #ffffff;
+  font-size: 14px;
+}
+.login-dropdown:hover  .loginlist-dropdown {
+  display: flex;
+   flex-direction: column;
+   width: 180px;
+   height: 150px;
+   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   text-align: left;
+   padding-left: 0px;
+   padding-right: 0px;
+   font-size: 14px;
+   margin-left: 176px;
+   top: 113px;
+   left: 0px;
+ }
+ .loginlist-dropdown:before{
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+  position: absolute;
+  margin: -20px 0px 0px 96px;
+}
+}
+

@@ -8,6 +8,9 @@ import "slick-carousel/slick/slick-theme.css";
 import AutoPlay from "./Components/Home/Autoplaycarousel/Autoplaycarousel";
 import Trending from "./Components/Home/Categories/Trending";
 import Productcarousel from "./Components/Home/Productcarousel/Productcarousel"
+import Reactcarousel from './Components/Home/Reactcarousel'
+import Kitchen from "./Components/Home/Kitchen/Kitchen";
+import Footer from "./Components/Home/Footer/Footer";
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
        <Autocarousels />
        <Productcarousel />
        <AutoPlay/>
-       <Trending/>
+       <Kitchen/>
+       <Footer/>
+       {/*<Trending/>*/}
     </Router>
    
     );

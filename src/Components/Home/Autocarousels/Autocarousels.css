@@ -1,4 +1,4 @@
-/* -------------------------------------------------------- reset */
+/* -------------------------------------------------------- reset 
 @import url('https://fonts.googleapis.com/css?family=Audiowide|Monoton|Poiret+One|Raleway');
 
 
@@ -13,8 +13,8 @@ label{
   display: none;
 }
 .text-slide{
-	width: 1200px;
-	height: 400px;
+	width: 1450px;
+	height: 200px;
 }
 body{
 	width: 100%;
@@ -61,7 +61,7 @@ body{
 .slider > ul > li.slide-3{
 	background-color: #0073B6;
 }
-/* -------------------------------------------------------- arrow */
+
 .slider > .slider-arrow-prev,
 .slider > .slider-arrow-next {
 	position: absolute;
@@ -108,7 +108,7 @@ body{
 	right: 5vw;
 	background-image: url(http://panikaro.interiowo.pl/img/arrow-right.png);
 }
-/* -------------------------------------------------------- dot */
+
 .slider > .slider-dot {
 	position: relative;
 	margin-top: -3.5vw;
@@ -135,7 +135,7 @@ body{
 .slider > .slider-dot > label:hover{
 	background-color: #7E6DE0 !important;
 }
-/* -------------------------------------------------------- description */
+
 .slider > .slide-description{
 	position: absolute;
     width: 100%;
@@ -187,14 +187,7 @@ body{
 .slider > .slide-description > .slide-3{
 	font-family: 'Audiowide', cursive;	
 }
-/* -------------------------------------------------------- autoplay */
-/*
-	if you don't want to autoplay 
-  just check input "slide-0" 
-  instead of input "play" in html code
-  and remove the code below
-*/
-/* -------------------------------------------------------- autoplay slide */
+
 @-webkit-keyframes slide{
 	0%, 100% { opacity: 0; }
 	6%, 25% { opacity: 1; z-index: 2; }
@@ -255,7 +248,7 @@ body{
 	-o-transition: none;
 	transition: none;	
 }
-/* -------------------------------------------------------- autoplay arrow */
+
 @-webkit-keyframes arrow {
 	0%, 24% { z-index: 1; }
 	25%, 100% { z-index: -1; }
@@ -308,7 +301,7 @@ body{
 	-o-animation: arrow 32000ms infinite 22000ms;
 	animation: arrow 32000ms infinite 22000ms;	
 }
-/* -------------------------------------------------------- autoplay dot */
+
 @-webkit-keyframes dot {
 	0%, 24%	{ background-color: #FD7FE3; }
 	25%, 100% { background: #FFF; }
@@ -357,7 +350,7 @@ body{
 	-o-animation: dot 32000ms infinite 22000ms;
 	animation: dot 32000ms infinite 22000ms;	
 }
-/* -------------------------------------------------------- autoplay description */
+
 @-webkit-keyframes description{
 	0%, 5% { opacity: 0; z-index: 2; visibility: visible; }
 	6%, 24% { opacity: 1; z-index: 2; visibility: visible; }
@@ -418,3 +411,52 @@ body{
   	-o-transition: none;
   	transition: none;  	
 }
+*/
+.slideshow {
+	margin: 0 auto;
+    overflow: hidden;
+    width: 1448px;
+    margin-top: 81px
+  }
+  
+  .slideshowSlider {
+	white-space: nowrap;
+	transition: ease 1000ms;
+  }
+  
+  .slide {
+	display: inline-block;
+    height: 400px;
+	width: 100%;
+}
+  
+  /* Buttons */
+  
+  .slideshowDots {
+	text-align: center;
+  }
+  
+  .slideshowDot {
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+  
+	cursor: pointer;
+	margin: 15px 7px 0px;
+  
+	background-color: #c4c4c4;
+  }
+  
+  .slideshowDot.active {
+	background-color: #6a0dad;
+  }
+  @media(max-width:767px){
+	.slideshow {
+		margin: 0 auto;
+		overflow: hidden;
+		width: 350px;
+		margin-top: 7px
+	  }
+	   
+  }
