@@ -11,17 +11,17 @@ import Productcarousel from "./Components/Home/Productcarousel/Productcarousel"
 import Reactcarousel from './Components/Home/Reactcarousel'
 import Kitchen from "./Components/Home/Kitchen/Kitchen";
 import Footer from "./Components/Home/Footer/Footer";
+import Reactrouter from "./Reactrouter";
+import Registration from "./Components/UserResgistration/Registration";
 
 function App() {
   return (
     <Router>
        <Menubar />
-       <Autocarousels />
-       <Productcarousel />
-       <AutoPlay/>
-       <Kitchen/>
-       <Footer/>
-       {/*<Trending/>*/}
+       <Reactrouter/>
+      
+      {/*<Footer/>
+       <Trending/>*/}
     </Router>
    
     );

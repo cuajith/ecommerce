@@ -68,7 +68,7 @@ const Menubar = () => {
                         </Link>
                         <Link
                             className="Login"
-                            to="/login"
+                            to="/"
                             onClick={() =>
                                 state.aboutLinkClass === "nav-item nav-link"
                                     ? "nav-item nav-link active"
