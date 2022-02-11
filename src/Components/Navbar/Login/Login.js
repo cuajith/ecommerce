@@ -11,7 +11,7 @@ const Login = () => {
                 <ul className="loginlist-dropdown">
                     <li className="loginlist-dropdown-items">Hello User</li>
                     <li className="loginlist-dropdown-items"><p>To access your account</p></li>
-                    <li className="loginlist-dropdown-items"><button><Link to='/registration'>Sign Up</Link></button></li>
+                    <li className="loginlist-dropdown-items"><button><Link to='/register'>Sign Up</Link></button></li>
                 </ul>
             </a>
         </div>

@@ -12,7 +12,7 @@ import Reactcarousel from './Components/Home/Reactcarousel'
 import Kitchen from "./Components/Home/Kitchen/Kitchen";
 import Footer from "./Components/Home/Footer/Footer";
 import Reactrouter from "./Reactrouter";
-import Registration from "./Components/UserResgistration/Registration";
+
 
 function App() {
   return (

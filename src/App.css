@@ -1,0 +1,11 @@
+label {
+    display: inline-block; 
+    color: black;
+  }
+  .heading{
+      color: black;
+  }
+  .login-register-link{
+      float: right;
+      text-decoration: none;
+  }
