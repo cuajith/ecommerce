@@ -41,7 +41,8 @@ router.post('/login', async (req, res) => {
             return res.status(400).json("Password not valid")
         }
         const userToken = jwt.sign({ email: userData.email }, 'success')
-        res.header('user', userToken).json(userToken)
+        res.header('user', userToken)
+        res.json({userToken});
     } catch (err) {
         console.log(400).json(err)
     }
