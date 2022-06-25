@@ -2,7 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import multiData from "./data";
+import multiData from "../Data/product";
+import filter from "../Data/Filter";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
 const PreviousBtn = (props) => {
@@ -10,7 +11,7 @@ const PreviousBtn = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <ArrowBackIos style={{ color: "blue", fontSize: "30px" }} />
+      <ArrowBackIos className="side-arrows" />
     </div>
   );
 };
@@ -18,7 +19,7 @@ const NextBtn = (props) => {
   const { className, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <ArrowForwardIos style={{ color: "blue", fontSize: "30px" }} />
+      <ArrowForwardIos className="side-arrows" />
     </div>
   );
 };
@@ -30,7 +31,7 @@ const carouselProperties = {
   // infinite={false}
   // slidesToScroll={3}
   centerMode: true,
-  centerPadding: "250px",
+  centerPadding: "270px",
   responsive: [
     {
       breakpoint: 426,
@@ -59,16 +60,21 @@ const carouselProperties = {
 
 const FirstCarousel = () => {
   return (
-    <div style={{ margin: "30px" }} className="carousel">
+    <div>
       <span className="or-option">
-        <hr /> <p>Top Trending</p> 
+        {filter.map((x) => {
+          return (
+            <div className="carousel">
+              <h6>{x.carouselName}</h6>
+              <Slider {...carouselProperties}>
+                {multiData.map((item) => (
+                  <Card item={item} />
+                ))}
+              </Slider>
+            </div>
+          );
+        })}
       </span>
-      <Slider {...carouselProperties}>
-        {multiData.map((item) => (
-          <Card item={item} />
-        ))}
-      </Slider>
-         <hr />
     </div>
   );
 };

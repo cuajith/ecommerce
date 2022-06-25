@@ -1,0 +1,27 @@
+.filter-container {
+    background-color: #fff;
+    width: 97%;
+    margin-top: 10px;
+     margin-bottom: 10px;
+    margin-left: 22px;
+}
+
+.filterImages {
+    padding: 20px;
+    width: 250px;
+    height: 200px;
+}
+
+@media screen and (max-width: 1250px) {
+    .filter-container {
+        background-color: #fff;
+        width: 90%;
+        margin-left: 20px;
+    }
+    .filterImages {
+        padding: 20px;
+        width: 250px;
+        height: 200px;
+       
+    }
+}

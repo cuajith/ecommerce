@@ -1,0 +1,13 @@
+.card-style {
+    height: 26rem;
+    max-width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex: 1
+}
+
+#main-page {
+    display: grid !important;
+    grid-template-columns: 1fr fr 1fr !important;
+}
+

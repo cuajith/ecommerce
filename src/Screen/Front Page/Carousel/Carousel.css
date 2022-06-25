@@ -3,6 +3,10 @@
 .carousel {
   position: relative;
   z-index: 0;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin: 10px 30px;
+  padding: 20px;
 }
 
 .carousel .slick-arrow.slick-prev,
@@ -55,24 +59,33 @@
 .card {
   background: #fff;
   border-radius: 10px;
-  margin: 0px 20px;
+  margin: 0px 25px;
   height: 220px;
+  cursor: pointer;
 }
 .title {
   font-family: 'Poppins';
   text-align: center;
   font-size: 12px;
 }
-.price {
+.card .price {
   font-family: 'Poppins';
   color: green; 
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
 }
 .or-option {
   display: flex;
   flex-direction: column;
   color: #989898;
+}
+
+.or-option h6 {
+  font-size: 20px;
+  color: #000;
+  font-family:'Poppins';
+  font-weight: 500;
+  padding: 12px;
 }
  
  .or-option p {
@@ -80,9 +93,15 @@
    color: #000;
    font-family: 'Poppins';
    font-weight: 500;
-   font-size: 22px;
+   font-size: 12px;
+  }
+
+  .side-arrows {
+    color: blue; 
+    font-size: 30px
   }
  
+  
  /* .or-option hr {
    width: 1460px;
  } */

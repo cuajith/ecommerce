@@ -1,43 +1,25 @@
 import React from "react";
-import { Nav, Navbar, Container, NavDropdown } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import "./App.css";
-import Men from "../Categories/Men";
-import Form from "react-bootstrap/Form";
 import Searchbar from "./Searchbar";
+import Megamenu from "./MegaMenu/Megamenu";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
       <input type="checkbox" id="check" />
       <nav>
-        <div className="icon">Ecommerce</div>
-
+        <div className="icon">
+          <NavLink to="/" className="logo">
+            Ecommerce
+          </NavLink>
+        </div>
         <div className="search-box">
           {/* dropdown */}
-          <label class="dropdown">
-              <div class="dd-button">Select</div>
-              <input type="checkbox" class="dd-input" id="test" />
-              <ul class="dd-menu">
-                <li>
-                  <a href="">Men</a>
-                  <ul>
-                    <li>
-                      <Men />
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="">Women</a>
-                </li>
-                <li>
-                  <a href="">All</a>
-                </li>
-              </ul>
-            </label>
+          <Megamenu />
           <Searchbar />
         </div>
         <ol>
