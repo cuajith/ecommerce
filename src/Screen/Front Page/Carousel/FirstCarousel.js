@@ -2,8 +2,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
-import multiData from "../Data/product";
-import filter from "../Data/Filter";
+import multiData from "../../../Data/product";
+import filter from "../../../Data/Filter";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 
 const PreviousBtn = (props) => {

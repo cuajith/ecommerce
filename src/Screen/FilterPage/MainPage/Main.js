@@ -1,11 +1,13 @@
 import React from "react";
-import multiData from "../Data/product";
-import { Card } from "react-bootstrap";
+import multiData from "../../../Data/product";
+import { Button, Card } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Increment } from "../../../Helper/helper";
 import "./Main.css";
 
 const Main = () => {
+  const count = 0;
   return (
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
       {multiData.map((item) => {
@@ -27,6 +29,7 @@ const Main = () => {
                 </Link>
 
                 <Card.Text as="div">₹ {item.price}</Card.Text>
+                <Button onClick={Increment(count)}>Add to cart</Button>
               </Card.Body>
             </Card>
           </Container>

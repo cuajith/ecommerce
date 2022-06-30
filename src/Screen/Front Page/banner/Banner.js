@@ -1,16 +1,19 @@
 import React from "react";
+import image1 from "../../../images/img6.jpg";
+import image2 from "../../../images/img1-slider.png";
+import image3 from "../../../images/img2-slider.png";
 import "./Banner.css";
 
 const Banner = () => {
   const colors = [
     {
-      img: "./images/img6.jpg",
+      img: image1,
     },
     {
-      img: "./images/img1-slider.png",
+      img: image2,
     },
     {
-      img: "./images/img2-slider.png",
+      img: image3,
     },
   ];
   const delay = 2500;

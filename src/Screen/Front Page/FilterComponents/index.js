@@ -1,9 +1,8 @@
 import React from "react";
-import image3 from "../Carousel/images/img2.jpg";
-import image12 from "../Carousel/images/img11.jpg";
-import image13 from "../Carousel/images/img12.jpg";
-import image14 from "../Carousel/images/img13.jpg";
-import Container from "react-bootstrap/Container";
+import image3 from "../../../images/img2.jpg";
+import image12 from "../../../images/img11.jpg";
+import image13 from "../../../images/img12.jpg";
+import image14 from "../../../images/img13.jpg";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./filter.css";
