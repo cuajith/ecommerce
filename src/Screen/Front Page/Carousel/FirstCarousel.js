@@ -5,6 +5,7 @@ import "./Carousel.css";
 import multiData from "../../../Data/product";
 import filter from "../../../Data/Filter";
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const PreviousBtn = (props) => {
   console.log(props);
@@ -82,7 +83,9 @@ const FirstCarousel = () => {
 const Card = ({ item }) => {
   return (
     <div className="card">
-      <img className="multi__image" src={item.img} alt="" />
+      <Link to="/filter">
+        <img className="multi__image" src={item.img} alt="" />
+      </Link>
       <p className="title">{item.title}</p>
       <p className="price">{item.price}</p>
     </div>

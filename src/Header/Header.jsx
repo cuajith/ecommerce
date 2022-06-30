@@ -6,10 +6,11 @@ import Searchbar from "./Searchbar/Searchbar";
 import Megamenu from "./MegaMenu/Megamenu";
 import { NavLink } from "react-router-dom";
 import Badge from "@mui/material/Badge";
-import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const Header = () => {
-  const { totalCount } = useSelector(state => state.cart)
+  const [qty, setQty] = React.useState(0);
+  const { id } = useParams();
   return (
     <>
       <input type="checkbox" id="check" />
@@ -26,8 +27,8 @@ const Header = () => {
         </div>
         <ol>
           <li>
-            <NavLink to="/cart">
-              <Badge badgeContent={totalCount} color="primary">
+            <NavLink to={`/cart/${id}?qty=${qty}`}>
+              <Badge badgeContent={0} color="primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

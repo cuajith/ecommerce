@@ -1,18 +1,23 @@
-const express = require('express')
-const app = express()
-const mongoose = require('mongoose')
-const userRouter = require('./userRouter')
-const cors = require('cors')
-const morgan = require('morgan')
+const express = require('express');
+const env = require('dotenv');
+const cors = require ('cors');
+const app = express();
+const productRoute = require('./routes/productRoute');
+const userRoute = require('./routes/userRoute');
+const orderRoute = require('./routes/orderRoute');
+const connectDb = require('./config/db');
 
-mongoose.connect("mongodb+srv://ajith080:mongoatlas@cluster0.62w7s.mongodb.net/User?retryWrites=true&w=majority", 
-()=>console.log("Database Connected"))
+//environment variable
+env.config();
 
-app.use(express.json())
-app.use(morgan('dev'))
-app.use(cors())
-app.use('/api', userRouter)
+app.use(express.json());
+app.use(cors());
+app.use('/api',productRoute);
+app.use('/api/user', userRoute);
+app.use('/api/order', orderRoute);
 
-app.listen(4000, ()=>console.log("server started"))
+connectDb();
 
-
+app.listen(process.env.PORT, () =>
+    console.log(`Server is running on port ${process.env.PORT}`)
+);

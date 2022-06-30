@@ -1,42 +1,38 @@
-import React from "react";
+import React, {useEffect} from "react";
 import multiData from "../../../Data/product";
 import { Button, Card } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { Increment } from "../../../Helper/helper";
 import "./Main.css";
+import { listProducts } from '../../../Redux/actions/productActions'
+import { useDispatch, useSelector } from 'react-redux'
+import Loader from '../../shared/Loader'
+import ProductScreen from "./ProductScreen";
 
 const Main = () => {
-  const count = 0;
-  return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
-      {multiData.map((item) => {
-        return (
-          <Container style={{ height: "450px" }}>
-            <Card style={{ height: "26rem" }}>
-              <Link to="/filter">
-                <Card.Img
-                  src={item.img}
-                  variant="top"
-                  style={{ height: "15rem" }}
-                />
-              </Link>
-              <Card.Body>
-                <Link to="/filter" style={{ textDecoration: "none" }}>
-                  <Card.Title as="div">
-                    <strong>{item.title}</strong>
-                  </Card.Title>
-                </Link>
-
-                <Card.Text as="div">₹ {item.price}</Card.Text>
-                <Button onClick={Increment(count)}>Add to cart</Button>
-              </Card.Body>
-            </Card>
-          </Container>
-        );
-      })}
-    </div>
-  );
+  const dispatch = useDispatch();
+   const productList = useSelector(state => state.productList);
+   const { loading, products, error } = productList
+   useEffect(() =>{
+     dispatch(listProducts())
+  },[])
+    return (
+        <>
+        {
+            loading ? <Loader/> :
+            error ? <h2> { error }</h2> :
+            <Row>
+            {
+                products.map((product) => (
+                    <Col key={product._id} md={4}>
+                        <ProductScreen product={product} />
+                    </Col>
+                ))
+            }
+        </Row>
+        }
+        </>
+    )
 };
 
 export default Main;
