@@ -15,11 +15,13 @@ const Sortby = () => {
     <Box sx={{ "& button": { m: 1 } }}>
       <div className="sortby">
         <Typography className="sortby-head">Sort by</Typography>
-        {data.map((x) => (
-          <Button variant="outlined" size="small">
-            {x.name}
-          </Button>
-        ))}
+        <div className="filter-button-option">
+          {data.map((x) => (
+            <Button variant="outlined" size="small">
+              {x.name}
+            </Button>
+          ))}
+        </div>
       </div>
     </Box>
   );

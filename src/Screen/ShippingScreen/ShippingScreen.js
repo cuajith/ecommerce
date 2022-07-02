@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import FormContainer from "../../Components/shared/FormContainer";
+import FormContainer from "../../Services/shared/FormContainer";
 import { saveShippingAddress } from "../../Redux/actions/cartAction";
 import { useNavigate } from "react-router-dom";
-import CheckoutStep from "../../Components/shared/CheckoutStep";
+import CheckoutStep from "../../Services/shared/CheckoutStep";
 
 const ShippingScreen = () => {
 

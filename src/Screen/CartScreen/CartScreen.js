@@ -31,7 +31,7 @@ const CartScreen = () => {
   };
 
   const checkout = () => {
-    navigate("/shipping");
+    navigate("/signin");
   };
 
   useEffect(() => {
@@ -43,6 +43,14 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   console.log(cartItems);
+
+  const subTotal = cartItems.reduce((acc, item) => acc + item.qty, 0);
+  // const data = {
+  //   productId: productId,
+  //   subTotal: subTotal,
+  // };
+  
+
   return (
     <Container>
       <Row>

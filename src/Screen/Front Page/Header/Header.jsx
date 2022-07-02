@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
-import "../styles/Header.css"
+import "../../../styles/Header.css";
 import Searchbar from "./Searchbar/Searchbar";
 import Megamenu from "./MegaMenu/Megamenu";
 import { NavLink } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../../Redux/actions/cartAction";
 
 const Header = () => {
-  const [qty, setQty] = React.useState(0);
-  const { id } = useParams();
+  
   return (
     <>
       <input type="checkbox" id="check" />
@@ -27,8 +28,8 @@ const Header = () => {
         </div>
         <ol>
           <li>
-            <NavLink to={`/cart/${id}?qty=${qty}`}>
-              <Badge badgeContent={0} color="primary">
+            <NavLink to={""}>
+              <Badge badgeContent={""} color="primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

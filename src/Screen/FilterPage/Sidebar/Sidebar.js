@@ -1,8 +1,8 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
+import { Row, Col } from "react-bootstrap";
 import Sortby from "./Sortby";
 import BrandList from "./BrandList";
-import "./Sidebar.css"
+import "../../../styles/FilterPage.css";
 import Progress from "./Progress";
 
 const Sidebar = () => {
@@ -10,13 +10,13 @@ const Sidebar = () => {
     <>
       <div className="sidebar">
         <Row>
-          <Sortby/>
+          <Sortby />
         </Row>
         <Row>
-          <BrandList/>
+          <BrandList />
         </Row>
         <Row>
-          <Progress/>
+          <Progress />
         </Row>
       </div>
     </>

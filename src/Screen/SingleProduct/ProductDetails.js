@@ -17,6 +17,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { listProductDetails } from "../../Redux/actions/productActions";
 import "../../styles/SingleProduct.css";
 import { Typography } from "@mui/material";
+import imageGallery from "../../Data/ImageGallery";
+
 
 const ProductDetails = () => {
   const [qty, setQty] = useState(0);
@@ -33,6 +35,11 @@ const ProductDetails = () => {
   useEffect(() => {
     dispatch(listProductDetails(id));
   }, []);
+
+  const handleTab = (index) => {
+    alert(index);
+  };
+
   return (
     <Container>
       <Link to="/filter" style={{ textDecoration: "none" }}>
@@ -44,12 +51,27 @@ const ProductDetails = () => {
       </Link>
       <Row>
         <Col md={5}>
-          <img
-            src={products.image}
-            alt={products.name}
-            variant="top"
-            className="single-product-image"
-          />
+          <Row>
+            <div className="single-product-image">
+              <img
+                src={products.image}
+                alt={products.image}
+              />
+            </div>
+          </Row>
+          <Row>
+            <div className="img-gallery">
+              {imageGallery.map((img, index) => (
+                <img
+                  src={img}
+                  alt=""
+                  width="50"
+                  key={index}
+                  onClick={() => handleTab(index)}
+                />
+              ))}
+            </div>
+          </Row>
         </Col>
         <Col md={4}>
           <ListGroup variant="flush" className="product-desc">
