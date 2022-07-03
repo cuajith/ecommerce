@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useCookies } from 'react-cookie';
 import axios from "axios";
@@ -16,13 +16,18 @@ import InputLabel from "@mui/material/InputLabel";
 import { useNavigate } from "react-router-dom";
 import "../../styles/auth.css";
 import CheckoutStep from "../../Services/shared/CheckoutStep";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../../Redux/actions/userAction";
 
 const Login = () => {
 
   // SET COOKIES
   const [cookies, setCookies] = useCookies(['name']);
+  const userLogin = useSelector(state => state.userLogin);
+  const { userInfo } = userLogin
  
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [values, setValues] = useState({
     showPassword: false,
@@ -52,20 +57,18 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    axios
-      .post("http://localhost:3001/credentials-login", data)
-      .then((res) => {
-        navigate('/shipping');
-        window.location.reload();
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-      });
+    dispatch(login(data.email, data.password));
+    navigate('/shipping')
     reset();
     setCookies('Email', data.email, { path: '/' })
-    setCookies('role', data.role, { path: '/' })
+    // setCookies('role', data.role, { path: '/' })
   };
+
+  useEffect(() => {
+    if(userInfo) {
+      navigate('/signin')
+    }
+},[])
 
   return (
     <>
@@ -179,7 +182,7 @@ const Login = () => {
                     </Box>
                   </div>
 
-                  <div className="">
+                  {/* <div className="">
                     <TextField
                       sx={{ height: "2c", marginTop: "1ch" }}
                       id="outlined-basic"
@@ -204,7 +207,7 @@ const Login = () => {
                         {errors.role.message}
                       </small>
                     )}
-                  </div>
+                  </div> */}
                  
                   <a href="/otp" className="forget-password">
                     forget password?

@@ -31,7 +31,7 @@ const CartScreen = () => {
   };
 
   const checkout = () => {
-    navigate("/signin");
+    navigate("/shipping");
   };
 
   useEffect(() => {

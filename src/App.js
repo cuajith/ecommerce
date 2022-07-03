@@ -12,6 +12,8 @@ import Registration from "./Screen/auth/Register";
 import Resetpassword from "./Screen/auth/Resetpassword";
 import Createpassword from "./Screen/auth/Createpassword";
 import EmailVerification from "./Screen/auth/EmailVerification";
+import PaymentScreen from "./Screen/PaymentScreen.js/PaymentScreen";
+import PlaceOrderScreen from "./Screen/PlaceOrder.js/PlaceOrderScreen";
 
 function App() {
   return (
@@ -24,11 +26,13 @@ function App() {
           <Route exact path="/product/:id" element={<ProductDetails />} />
           <Route exact path="/cart/:id" element={<CartScreen />} />
           <Route exact path="/shipping" element={<ShippingScreen />} />
+          <Route exact path="payment" element={<PaymentScreen />} />
+          <Route exact path="placeorder" element={<PlaceOrderScreen />} />
           <Route exact path="/signin" element={<Login />} />
           <Route exact path="/signup" element={<Registration />} />
           <Route exact path="/otp" element={<Resetpassword />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
