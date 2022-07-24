@@ -57,7 +57,14 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    dispatch(login(data.email, data.password));
+    axios
+      .post("http://localhost:3001/credentials-login", data)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err.response.data);
+      });
     navigate('/shipping')
     reset();
     setCookies('Email', data.email, { path: '/' })
@@ -73,7 +80,7 @@ const Login = () => {
   return (
     <>
     <CheckoutStep step1/>
-      <div className="container pt-4">
+      <div className="container">
         <div className="row justify-content-sm-center pt-5">
           <div className="col-11">
             <div className="row">
@@ -85,7 +92,6 @@ const Login = () => {
                     "0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)",
                   transition: "all 0.3s cubic-bezier(.25,.8,.25,1)",
                   padding: "25px",
-                  // marginTop: "-50px",
                 }}
               >
                 
@@ -101,14 +107,14 @@ const Login = () => {
                     <Loginwithgoogle />
                     <Facebooklogin />
                   </div>
-                  <span className="or-option">
+                  {/* <span className="or-option">
                     <hr /> <p>or</p> <hr />
-                  </span>
+                  </span> */}
 
                  
                   <div className="">
                     <TextField
-                      sx={{ height: "2c", marginBottom: "1ch" }}
+                      sx={{ marginBottom: "1ch" }}
                       id="outlined-basic"
                       label="Email address"
                       variant="outlined"
@@ -182,9 +188,9 @@ const Login = () => {
                     </Box>
                   </div>
 
-                  {/* <div className="">
+                   <div className="">
                     <TextField
-                      sx={{ height: "2c", marginTop: "1ch" }}
+                      sx={{ marginTop: "1ch" }}
                       id="outlined-basic"
                       label="Enter Role"
                       variant="outlined"
@@ -207,7 +213,7 @@ const Login = () => {
                         {errors.role.message}
                       </small>
                     )}
-                  </div> */}
+                  </div>
                  
                   <a href="/otp" className="forget-password">
                     forget password?

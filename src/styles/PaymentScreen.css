@@ -1,0 +1,14 @@
+.payment-screen {
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 120px;
+}
+
+.payment-type {
+    margin: 20px 0px;
+}
+
+.label-head {
+    font-size: 25px;
+    padding: 20px 0px;
+}

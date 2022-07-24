@@ -31,7 +31,7 @@ const CartScreen = () => {
   };
 
   const checkout = () => {
-    navigate("/shipping");
+    navigate("/signin");
   };
 
   useEffect(() => {
@@ -49,14 +49,13 @@ const CartScreen = () => {
   //   productId: productId,
   //   subTotal: subTotal,
   // };
-  
 
   return (
     <Container>
       <Row>
-        <Col md={9}>
+        <Col md={12}>
           <div className="cart-screen-page">
-            <Typography className="your-cart">Your Shopping Cart</Typography>
+            <Typography className="your-cart">Your Cart</Typography>
             {cartItems.length === 0 ? (
               <span>
                 Your Cart is Empty ! <Link to="/filter">Go Back</Link>
@@ -66,7 +65,7 @@ const CartScreen = () => {
                 {cartItems.map((item) => (
                   <ListGroupItem>
                     <Row className="cart-items-list">
-                      <Col md={2}>
+                      <Col>
                         <Image
                           src={item.image}
                           alt={item.name}
@@ -75,7 +74,7 @@ const CartScreen = () => {
                           className="cart-image"
                         />
                       </Col>
-                      <Col md={2}>
+                      <Col>
                         <Link
                           to={`/product/${item.product}`}
                           className="product-link"
@@ -85,12 +84,12 @@ const CartScreen = () => {
                           </Typography>
                         </Link>
                       </Col>
-                      <Col md={2}>
-                        <Typography className="product-name">
+                      <Col>
+                        <Typography className="product-price">
                           ₹ {item.price}
                         </Typography>
                       </Col>
-                      <Col md={2}>
+                      <Col>
                         <Form.Select
                           value={item.qty}
                           onChange={(e) =>
@@ -107,7 +106,7 @@ const CartScreen = () => {
                           ))}
                         </Form.Select>
                       </Col>
-                      <Col md={1}>
+                      <Col>
                         <DeleteOutlineIcon
                           onClick={() => removeFromCartHandler(item.product)}
                           className="delete-cart"
@@ -120,13 +119,12 @@ const CartScreen = () => {
             )}
           </div>
         </Col>
-        <Col md={3}>
+        
           <div className="cart-total">
             <ListGroup variant="flash">
               <ListGroupItem className="total-price">
                 <h2 className="subtotal-heading">
-                  Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                  ) items
+                  Subtotal ({subTotal}) items
                 </h2>
                 <Typography className="subtotal-amount">
                   ₹
@@ -147,7 +145,7 @@ const CartScreen = () => {
               </div>
             </ListGroup>
           </div>
-        </Col>
+       
       </Row>
     </Container>
   );

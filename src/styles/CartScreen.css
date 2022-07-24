@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;500;700&display=swap');
 
 .cart-screen-page {
-    padding: 30px;
+    height: fit-content;
 }
 
 .cart-items-list {
@@ -11,8 +11,8 @@
 }
 
 .cart-image {
-    width: 90%;
-    height: 100px;
+    width: 100%;
+    height: 70px;
 }
 
 .your-cart {
@@ -27,7 +27,6 @@
     color: #383838;
     text-decoration: none;
     cursor: pointer;
-    margin-top: 40px !important;
 }
 
 .product-link:hover {
@@ -36,18 +35,32 @@
 
 .product-name {
   text-align: center;
-  padding: 25% 0px;
-  font-size: 14px !important;
+  padding: 0px 0px;
+  font-size: 12px !important;
   font-family: "Roboto";
+  margin-top: 25px !important;
+  width: 80px;
+}
+
+.product-price {
+  text-align: center;
+  padding: 0px 0px;
+  font-size: 12px !important;
+  font-family: "Roboto";
+  margin-top: 30px !important;
+  width: 50px;
 }
 
 .cart-select-option {
-  margin: 20% 0;
-  width: 70px;
+  margin: 22px 0;
+  width: 50px;
+  height: 30px;
+  padding: 0px 10px;
+  font-size: 12px;
 }
 
 .delete-cart {
-    margin: 60% 0;
+    margin: 25px 0;
     cursor: pointer;
 }
 
@@ -56,11 +69,11 @@
 }
 
 .cart-total {
-    margin-top: 50%;
-    padding: 50px 0px;
-    width: 100%;
+    padding: 20px 0px;
+    width: 80%;
     border: 0.5px solid #aaaaaac0 !important;
     border-radius: 20px;
+    margin: 0px 10%
 }
 
 .total-price {
@@ -85,7 +98,7 @@
     color: #000;
     font-size: 13px;
     letter-spacing: 0.5px;
-    margin: 20px 0px;
+    margin: 0px 0px;
 }
 
 .proceed-to-checkout:hover {
